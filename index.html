@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+  <title>Library</title>
+</head>
+<body>
+	<div id="wrap">
+		<h1>My Library</h1>
+		<div id="button-container">
+			<button id="add-new-book">Add a book</button>
+		</div>
+		<div id="book-modal" class="modal">
+			<div id="modal-content">
+				<span id="close" onclick="openModal()">&times</span>
+				<input type="text" name="title" id="title" placeholder="Title">
+				<input type="text" name="author" id="author" placeholder="Author">
+				<input type="number" name="pages" id="pages" placeholder="Number of pages">
+				<div id="read-wrapper">
+					<label for="read">Is it read?</label>
+					<input type="checkbox" name="read" id="read">
+				</div>
+				<input type="button" name="addToLibrary" id="add" value="Add" onclick="addBookToLibrary()">
+			</div>
+		</div>
+		<div id="library" class="row">
+		</div>
+	</div>
+	<script src="library.js"></script>
+</body>
+</html>
