@@ -1,4 +1,4 @@
-# library
+# Library
 
 A very simple library made for The Odin Project
 
