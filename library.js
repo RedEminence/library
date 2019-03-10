@@ -1,6 +1,6 @@
 
 // Массив библиотеки, проверка есть ли в локальном хранилище что-то
-let myLibrary = localStorage.getItem('myKey') ? JSON.parse(localStorage.getItem('myKey')) : [];
+const myLibrary = localStorage.getItem('myLibrary') ? JSON.parse(localStorage.getItem('myLibrary')) : [];
 
 // Для поп-апа
 const modal = document.getElementById('book-modal');
@@ -8,8 +8,8 @@ const btn = document.getElementById('add-new-book');
 
 
 // Массив библиотеки из строки в строку
-localStorage.setItem('myKey', JSON.stringify(myLibrary));
-const returnLib = JSON.parse(localStorage.getItem('myKey'));
+localStorage.setItem('myLibrary', JSON.stringify(myLibrary));
+const returnLib = JSON.parse(localStorage.getItem('myLibrary'));
 
 
 // отображение каждой книги при обновлении страницы
@@ -63,7 +63,7 @@ function addBookToLibrary() {
   read.checked = false;
   render();
   openModal();
-  localStorage.setItem('myKey', JSON.stringify(myLibrary));
+  localStorage.setItem('myLibrary', JSON.stringify(myLibrary));
   return myLibrary;
 }
 
@@ -71,7 +71,7 @@ function addBookToLibrary() {
 
 function deleteBook(index) {
 	myLibrary.splice(index, 1);
-  localStorage.clear();
+  localStorage.setItem('myLibrary', JSON.stringify(myLibrary));
 	render();
 }
 
